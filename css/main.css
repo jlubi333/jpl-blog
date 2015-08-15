@@ -1,0 +1,178 @@
+body {
+    font-family: "Garamond", serif;
+    font-size: 16px;
+    background-color: #FCFCFC;
+    padding-bottom: 20px;
+}
+
+/* --- Default --- */
+
+.page-wrapper {
+    width: 700px;
+    margin: auto;
+}
+
+@media(max-width: 750px) {
+    .page-wrapper {
+        width: calc(100% - 50px)
+    }
+}
+
+.content {
+    padding: 20px;
+}
+
+/* --- Header --- */
+
+.site-header {
+    text-align: center;
+    margin-top: 100px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #000000;
+}
+
+    .site-header h1 {
+        font-size: 3em;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .site-header .tagline {
+        margin-bottom: 20px;
+    }
+
+/* --- Nav --- */
+
+.site-nav ul {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.site-nav li {
+    display: inline-block;
+    border-right: 1px solid black;
+    float: left;
+}
+
+    .site-nav li:last-child {
+        border-right: none;
+    }
+
+    .site-nav li a {
+        display: block;
+        text-decoration: none;
+        padding: 0 20px;
+    }
+
+/* --- Post List --- */
+
+.post-list h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.post-list ul {
+    list-style-type: none;
+}
+
+.post-list .post {
+    border-top: 1px dotted #000000;
+}
+
+    .post-list .post:last-child {
+        border-bottom: 1px dotted #000000;
+    }
+
+    .post-list .post a {
+        display: block;
+        background-color: #F3F3F3;
+        font-size: 1.5em;
+        text-decoration: none;
+        padding: 10px;
+        overflow: auto;
+    }
+
+        .post-list .post:nth-child(even) a {
+            background-color: #F8F8F8;
+        }
+
+.post-list .post-title {
+    width: 80%;
+    float: left;
+}
+
+.post-list .post-date {
+    color: #000000;
+    font-size: 0.6em;
+    float: right;
+}
+
+@media(max-width: 750px) {
+    .post-list .post-title {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .post-list .post-date {
+        float: none;
+    }
+}
+
+/* --- Footer --- */
+
+.site-footer {
+    padding-top: 20px;
+    border-top: 1px dotted #000000;
+}
+
+    .site-footer p {
+        font-size: 0.8em;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+/* --- Posts --- */
+
+.content.post h1,
+.content.post h2,
+.content.post h3
+{
+    font-weight: bold;
+    padding: 10px;
+}
+
+.content.post h1 {
+    font-size: 2em;
+    border-top: 1px dotted #000000;
+    border-bottom: 1px dotted #000000;
+    margin-bottom: 10px;
+}
+
+.content.post h2 {
+    font-size: 1.7em;
+}
+
+.content.post h3 {
+    font-size: 1.5em;
+}
+
+.content.post p {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    margin-bottom: 10px;
+}
+
+.content.post i,
+.content.post em {
+    font-style: italic;
+}
+
+.content.post b,
+.content.post strong {
+    font-weight: bold;
+}
+
+.content.post > *:last-child {
+    margin-bottom: 0;
+}
