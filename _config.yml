@@ -8,3 +8,5 @@ base_url: ""
 
 portfolio_url: "http://jlub.in"
 about_url: "/about/"
+
+highlighter: "pygments"
