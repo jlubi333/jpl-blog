@@ -37,6 +37,19 @@ body {
     padding-bottom: 20px;
 }
 
+a {
+    color: rgb(0, 0, 238);
+    text-decoration: none;
+}
+
+    a:active {
+        color: rgb(255, 0, 0);
+    }
+
+    a:visited {
+        color: rgb(85, 26, 139);
+    }
+
 .page-wrapper {
     width: 700px;
     margin: auto;
@@ -46,6 +59,33 @@ body {
     .page-wrapper {
         width: calc(100% - 50px)
     }
+}
+
+/* --- Code --- */
+
+.highlighttable {
+    width: 100%;
+    font-family: "Inconsolata", monospace;
+    margin: 20px 0;
+    border-radius: 5px;
+    overflow: hidden;
+    table-layout: fixed;
+}
+
+.linenos, .highlight {
+    padding: 20px 10px;
+}
+
+.linenos {
+    background-color: rgb(52, 61, 69);
+    color: rgb(100, 115, 125);
+    text-align: right;
+    width: 30px;
+}
+
+.highlight {
+    overflow: scroll;
+    border-right: 10px solid rgb(43, 48, 59);
 }
 
 /* --- Default --- */
@@ -92,8 +132,8 @@ body {
 
     .site-nav li a {
         display: block;
-        text-decoration: none;
         padding: 5px 20px;
+        color: rgb(85, 26, 139);
     }
 
 /* --- Post List --- */
@@ -119,6 +159,7 @@ body {
     .post-list .post a {
         display: block;
         background-color: #F3F3F3;
+        color: #000000;
         font-size: 1.5em;
         text-decoration: none;
         padding: 10px;
@@ -134,8 +175,12 @@ body {
     float: left;
 }
 
+    .post-list .post-title span {
+        display: inline-block;
+        border-bottom: 1px solid black;
+    }
+
 .post-list .post-date {
-    color: #000000;
     font-size: 0.6em;
     float: right;
 }
@@ -176,9 +221,9 @@ body {
 
 .content.post h1 {
     font-size: 2em;
+    margin: 20px 0 10px 0;
     border-top: 1px dotted #000000;
     border-bottom: 1px dotted #000000;
-    margin-bottom: 10px;
 }
 
 .content.post h2 {
@@ -203,6 +248,10 @@ body {
 .content.post b,
 .content.post strong {
     font-weight: bold;
+}
+
+.content.post > *:first-child {
+    margin-top: 0;
 }
 
 .content.post > *:last-child {
