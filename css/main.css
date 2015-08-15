@@ -67,8 +67,6 @@ a {
     width: 100%;
     font-family: "Inconsolata", monospace;
     margin: 20px 0;
-    border-radius: 5px;
-    overflow: hidden;
     table-layout: fixed;
 }
 
@@ -77,15 +75,19 @@ a {
 }
 
 .linenos {
+    width: 30px;
     background-color: rgb(52, 61, 69);
     color: rgb(100, 115, 125);
     text-align: right;
-    width: 30px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .highlight {
     overflow: scroll;
     border-right: 10px solid rgb(43, 48, 59);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 /* --- Default --- */
