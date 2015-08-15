@@ -1,11 +1,41 @@
+/* --- Font Faces --- */
+
+@font-face {
+    font-family: "Latin Modern";
+    src: url("web_fonts/lmroman10-regular.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Latin Modern";
+    src: url("web_fonts/lmroman10-bold.otf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Latin Modern";
+    src: url("web_fonts/lmroman10-italic.otf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Latin Modern";
+    src: url("web_fonts/lmroman10-bolditalic.otf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* --- Plain --- */
+
 body {
-    font-family: "Garamond", serif;
+    font-family: "Latin Modern", "Garamond", "Baskerville",  serif;
     font-size: 16px;
     background-color: #FCFCFC;
     padding-bottom: 20px;
 }
-
-/* --- Default --- */
 
 .page-wrapper {
     width: 700px;
@@ -17,6 +47,8 @@ body {
         width: calc(100% - 50px)
     }
 }
+
+/* --- Default --- */
 
 .content {
     padding: 20px;
@@ -61,7 +93,7 @@ body {
     .site-nav li a {
         display: block;
         text-decoration: none;
-        padding: 0 20px;
+        padding: 5px 20px;
     }
 
 /* --- Post List --- */
