@@ -106,10 +106,36 @@ Can you tell which Project Euler problem it is? It's [Problem 2][pe2]{:
 .spoiler}!
 
 It's certainly not the most readable language (infix operators would really
-help), but it's definitely a start.
+help), but it's definitely a start. Despite its shortcomings, you can definitely
+discern some standard computer science paradigms, with return statements,
+recursion, and variable types.
+
+Speaking of variable types, I mentioned early that Camille would be a
+statically-typed, interpreted language, *not* compiled.
+
+Why??? Who does that???
+
+Well, for starters, it is much easier to implement an interpreter than a
+compiler. If you are intereted in a compiled language, I highly recommend
+reading about LLVM, a colllection of tools that makes compiler writing
+significantly easier. Stephen Diehl has written an [excellent
+tutorial][haskell-llvm] for LLVM in Haskell, so go check that out if you're into
+that kind of thing.
+
+More importantly, however, is that I really saw a Void (category theory pun
+intended) that could be filled with a language like this. Everyone loves the
+ease-of-use of languages like Python or Ruby, but none of them (that I know of)
+have a really solid type system. I won't make this paragraph a debate about
+static vs. dynamic typing, but I personally am a fan of static
+typing---especially when it's done right, like in Haskell. By now I'm sure you
+can tell that I love Haskell.
+
+Did I mention that I loved Haskell? I do. You will too, soon enough (if you
+don't already).
 
 [project-euler]: http://projecteuler.net
 [haskell]: http://haskell.org/
 [lyah]: http://learnyouahaskell.com/
 [bnf]: https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form
 [pe2]: https://projecteuler.net/problem=2
+[haskell-llvm]: http://www.stephendiehl.com/llvm/
