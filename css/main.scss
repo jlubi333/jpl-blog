@@ -66,35 +66,6 @@ a:hover {
     }
 }
 
-/* --- Code --- */
-
-.highlighttable {
-    width: 100%;
-    font-family: "Inconsolata", monospace;
-    margin: 20px 0;
-    table-layout: fixed;
-}
-
-.linenos, .highlight {
-    padding: 20px 10px;
-}
-
-.linenos {
-    width: 30px;
-    background-color: rgb(52, 61, 69);
-    color: rgb(100, 115, 125);
-    text-align: right;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-.highlight {
-    overflow: scroll;
-    border-right: 10px solid rgb(43, 48, 59);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
 /* --- Default --- */
 
 .content {
@@ -265,3 +236,59 @@ a:hover {
 .content.post > *:last-child {
     margin-bottom: 0;
 }
+
+.content.post .spoiler {
+    color: #000000;
+    background-color: #000000;
+}
+
+    .content.post .spoiler:hover {
+        color: inherit;
+        background-color: inherit;
+    }
+
+/* --- Code --- */
+
+pre {
+    font-family: "Inconsolata", monospace;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: scroll;
+}
+
+.highlighttable {
+    width: 100%;
+    margin: 20px 0;
+    table-layout: fixed;
+}
+
+    .highlighttable pre {
+        margin: 0;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        overflow: auto;
+    }
+
+.linenos, .highlight {
+    padding: 20px 10px;
+}
+
+.linenos {
+    width: 30px;
+    background-color: rgb(52, 61, 69);
+    color: rgb(100, 115, 125);
+    text-align: right;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.highlight {
+    overflow: scroll;
+    border-right: 10px solid rgb(43, 48, 59);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
