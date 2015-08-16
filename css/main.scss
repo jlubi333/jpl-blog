@@ -1,3 +1,11 @@
+---
+---
+
+/* --- Variables --- */
+
+$main-color: #3D5499;
+$main-color-darker: #293866;
+
 /* --- Font Faces --- */
 
 @font-face {
@@ -38,17 +46,14 @@ body {
 }
 
 a {
-    color: rgb(0, 0, 238);
+    color: $main-color;
+    transition: color 0.1s;
     text-decoration: none;
 }
 
-    a:active {
-        color: rgb(255, 0, 0);
-    }
-
-    a:visited {
-        color: rgb(85, 26, 139);
-    }
+a:hover {
+    color: $main-color-darker;
+}
 
 .page-wrapper {
     width: 700px;
@@ -134,8 +139,8 @@ a {
 
     .site-nav li a {
         display: block;
+        text-decoration: none;
         padding: 5px 20px;
-        color: rgb(85, 26, 139);
     }
 
 /* --- Post List --- */
@@ -161,8 +166,6 @@ a {
     .post-list .post a {
         display: block;
         background-color: #F3F3F3;
-        color: #000000;
-        font-size: 1.5em;
         text-decoration: none;
         padding: 10px;
         overflow: auto;
@@ -178,14 +181,17 @@ a {
 }
 
     .post-list .post-title span {
-        display: inline-block;
-        border-bottom: 1px solid black;
+        text-decoration: underline;
     }
 
 .post-list .post-date {
-    font-size: 0.6em;
+    font-size: 0.75em;
     float: right;
 }
+
+    .post-list .post-date span {
+        color: #000000;
+    }
 
 @media(max-width: 750px) {
     .post-list .post-title {

@@ -4,9 +4,9 @@ tagline: "Programmer, pianist, fencer, high schooler&hellip; and now blogger?"
 email: "jlubi333@gmail.com"
 
 url: "http://blog.jlub.in"
-base_url: ""
 
-portfolio_url: "http://jlub.in"
+base_url: "/"
 about_url: "/about/"
+portfolio_url: "http://jlub.in"
 
 highlighter: "pygments"
