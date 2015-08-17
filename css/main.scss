@@ -280,6 +280,19 @@ a:hover {
         background-color: inherit;
     }
 
+    .content.post .spoiler > * {
+        visibility: hidden;
+    }
+
+        .content.post .spoiler:hover > * {
+            visibility: visible;
+        }
+
+.content.post .mutter {
+    font-style: italic;
+    color: #AAAAAA;
+}
+
 .content.post > *:first-child {
     margin-top: 0;
 }
