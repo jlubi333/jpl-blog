@@ -270,6 +270,11 @@ a:hover {
     font-weight: bold;
 }
 
+.content.post .center {
+    display: block;
+    text-align: center;
+}
+
 .content.post .spoiler {
     color: #000000;
     background-color: #000000;
@@ -303,13 +308,21 @@ a:hover {
 
 /* --- Code --- */
 
-pre {
+pre,
+code {
     font-family: "Inconsolata", monospace;
+}
+
+pre {
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
     overflow: scroll;
+}
+
+p code {
+    background-color: #EEEEEE;
 }
 
 .highlighttable {
@@ -345,4 +358,3 @@ pre {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-

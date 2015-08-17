@@ -11,14 +11,14 @@ claiming that this is the best way or the most efficient, but it worked for me!
 
 ## The Setup
 
-I used my favorite programming language, [Haskell][haskell], because it is
-**(a)** really awesome and **(b)** very well suited to programming language
-creation. This tutorial will not focus on teaching Haskell itself, so if you
-have never seen a line of Haskell code in your life, I would recommend checking
-out [Learn You a Haskell][lyah] (LYAH as it is often called in the Haskell
-community). It is an excellent textbook chock-full of awesome Haskell-y things
-and funny drawings that can take you from a Haskell newbie to basic proficiency
-and literacy.
+In this tutorial, I will use favorite programming language, [Haskell][haskell],
+because it is **(a)** really awesome and **(b)** very well suited to programming
+language creation. This tutorial will not focus on teaching Haskell itself, so
+if you have never seen a line of Haskell code in your life, I would recommend
+checking out [Learn You a Haskell][lyah] (LYAH as it is often called in the
+Haskell community). It is an excellent textbook chock-full of awesome Haskell-y
+things and funny drawings that can take you from a Haskell newbie to basic
+proficiency and literacy.
 
 This tutorial assumes no previous knowledge of very fancy Haskell concepts or
 any understanding of programming language theory or compiler design. If you
