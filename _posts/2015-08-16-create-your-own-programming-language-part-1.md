@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Create Your Own Programming Language: Part 1"
+title: "Create Your Own Programming Language: Part I"
 ---
 
-# How to Create Your Own Programming Language: Part I
+# Create Your Own Programming Language: Part I
 
 This is **Part I** of a series of blog posts where I will show you how I created
 my own statically-typed, interpreted programming language, Camille. I'm not
@@ -15,7 +15,7 @@ I used my favorite programming language, [Haskell][haskell], because it is
 **(a)** really awesome and **(b)** very well suited to programming language
 creation. This tutorial will not focus on teaching Haskell itself, so if you
 have never seen a line of Haskell code in your life, I would recommend checking
-out [Learn You a Haskell][lyah]. *Learn You a Haskell* (LYAH as it is often
+out *[Learn You a Haskell][lyah]*. *Learn You a Haskell* (LYAH as it is often
 called in the Haskell community) is an excellent textbook chock-full of awesome
 Haskell-y things and funny drawings that can take you from a Haskell newbie to
 basic proficiency and literacy.
@@ -26,9 +26,9 @@ don't know what software transactional memory or an abstract syntax tree are,
 that's completely fine! I definitely didn't either, until I worked on this
 project---and I'm certainly not an expert even now.
 
-Lastly, won't be focusing too much on efficiency or anything fancy like that, but we will have a fully-fledged
-language that will be able to solve the first three problems of [Project
-Euler][project-euler]. Let's get started!
+Lastly, won't be focusing too much on efficiency or anything fancy like that,
+but we will have a fully-fledged language that will be able to solve the first
+three problems of [Project Euler][project-euler]. Let's get started!
 
 ## Designing the Language
 
@@ -113,7 +113,7 @@ recursion, and variable types.
 Speaking of variable types, I mentioned early that Camille would be a
 statically-typed, interpreted language, *not* compiled.
 
-Why??? Who does that???
+*Why??? Who does that???*
 
 Well, for starters, it is much easier to implement an interpreter than a
 compiler. If you are intereted in a compiled language, I highly recommend
@@ -133,9 +133,70 @@ can tell that I love Haskell.
 Did I mention that I loved Haskell? I do. You will too, soon enough (if you
 don't already).
 
+## The Tools
+
+To follow along with this tutorial, you will need Haskell (obviously) and Cabal.
+Once you have these installed (either via a package manager or the [Haskell
+Platform][haskell-platform]), we will need to download a package named "Parsec."
+
+### What is Parsec?
+
+According to the [Haskell Wiki page for Parsec][haskell-wiki-parsec]:
+
+> Parsec is an industrial strength, monadic parser combinator library for
+Haskell. It can parse context-sensitive, infinite look-ahead grammars but it
+performs best on predictive (LL[1]) grammars.
+
+Erm... okay... what's a combinator again?
+
+Don't worry if you don't know what any of this means. Like I said before, I had
+absolutely no idea what any of this was when I started. For our purposes, we
+will just be using Parsec as a nice library that makes parsing text very easy.
+
+To install Parsec, just type the following into the command line:
+
+    cabal install parsec
+
+Parsec should work right out of the box. Congratulations, you are now ready to
+write your very own programming language!
+
+## A Final Note
+
+Before we dive right in, I'd like to point out a few resources that you may find
+valuable (I certainly did).
+
+- [Write Yourself a Scheme in 48 Hours][write-a-scheme]: Exactly what it says on
+    the tin. Of all the resources I've mentioned, I probably learned the most
+    from this one.
+- [DIY: Make Your Own Programming Language, by Mattias Appelgren][diy]: Also
+    exactly what it says on the tin. It uses Rust, which is a cool new language
+    that looks very promising. The language that he creates is unfortunately not
+    fully featured, though. The parts that it does cover, however, are very
+    nicely done.
+- [Stephen Diehl's LLVM Tutorial][haskell-llvm]: So nice I mentioned it twice.
+- [Write You a Haskell][wyah]: Also by Stephen Diehl. It is a very cool
+    adventure into the world of creating a functional programming language, but
+    it is sadly incomplete.
+- [Parsing a Simple Imperative Language, Haskell Wiki][while]: This short wiki
+    article discusses parsing a simple imperative language ("While"), but it
+    uses more complex features of Parsec that I feel are unnecessary.
+
+Lastly, if you'd like to see the full implementation of what we'll be making,
+you should check out my [repository on Github][camille] for Camille.
+
+Without further ado, [let's-a-go][part2]!
+
 [project-euler]: http://projecteuler.net
 [haskell]: http://haskell.org/
 [lyah]: http://learnyouahaskell.com/
 [bnf]: https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form
 [pe2]: https://projecteuler.net/problem=2
 [haskell-llvm]: http://www.stephendiehl.com/llvm/
+[haskell-platform]: https://www.haskell.org/platform/
+[haskell-wiki-parsec]: https://wiki.haskell.org/Parsec
+[write-a-scheme]: https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours
+[diy]: http://blog.ppelgren.se/2015-01-03/DIY-Make-Your-Own-Programming-language/
+[wyah]: http://dev.stephendiehl.com/fun/
+[while]: https://wiki.haskell.org/Parsing_a_simple_imperative_language
+[camille]: https://github.com/jlubi333/Camille
+[part2]: {% post_url 2015-08-17-create-your-own-programming-language-part-2 %}

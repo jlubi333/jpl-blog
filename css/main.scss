@@ -4,7 +4,7 @@
 /* --- Variables --- */
 
 $main-color: #3D5499;
-$main-color-darker: #293866;
+$main-color-darker: #2B3B6B;
 
 /* --- Font Faces --- */
 
@@ -37,6 +37,14 @@ $main-color-darker: #293866;
 }
 
 /* --- Plain --- */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 body {
     font-family: "Latin Modern", "Garamond", "Baskerville",  serif;
@@ -136,14 +144,14 @@ a:hover {
 
     .post-list .post a {
         display: block;
-        background-color: #F3F3F3;
+        background-color: #E2E2E2;
         text-decoration: none;
         padding: 10px;
         overflow: auto;
     }
 
         .post-list .post:nth-child(even) a {
-            background-color: #F8F8F8;
+            background-color: #EEEEEE;
         }
 
 .post-list .post-title {
@@ -192,6 +200,14 @@ a:hover {
 
 .content.post h1,
 .content.post h2,
+.content.post h3,
+.content.post p,
+.content.post li {
+    line-height: 1.4em;
+}
+
+.content.post h1,
+.content.post h2,
 .content.post h3
 {
     font-weight: bold;
@@ -210,14 +226,39 @@ a:hover {
 }
 
 .content.post h3 {
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
-.content.post p {
+.content.post p,
+.content.post li {
     font-size: 1.2em;
-    line-height: 1.4em;
     margin-bottom: 10px;
 }
+
+.content.post ul,
+.content.post ol {
+    list-style-position: inside;
+    margin-left: 10px;
+}
+
+.content.post ul {
+    list-style-type: disc;
+}
+
+.content.post ol {
+    list-style-type: decimal;
+}
+
+.content.post blockquote {
+    background-color: #EEEEEE;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-left: 10px solid $main-color;
+}
+
+    .content.post blockquote p {
+        margin: 0;
+    }
 
 .content.post i,
 .content.post em {
@@ -229,14 +270,6 @@ a:hover {
     font-weight: bold;
 }
 
-.content.post > *:first-child {
-    margin-top: 0;
-}
-
-.content.post > *:last-child {
-    margin-bottom: 0;
-}
-
 .content.post .spoiler {
     color: #000000;
     background-color: #000000;
@@ -246,6 +279,14 @@ a:hover {
         color: inherit;
         background-color: inherit;
     }
+
+.content.post > *:first-child {
+    margin-top: 0;
+}
+
+.content.post > *:last-child {
+    margin-bottom: 0;
+}
 
 /* --- Code --- */
 
