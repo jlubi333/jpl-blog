@@ -143,9 +143,7 @@ number.
 By the way, this would be a good time to mention that `Void` is actually the
 unit type in category theory, and `Nothing` is the unit value. These are
 classically represented as something like `()` for both the type and the value,
-but I prefer the explicit name for a language like Camille. Feel free to
-completely ignore this paragraph, but I just thought that it was cool to draw
-some parallels between theory and practice.
+but I prefer the explicit name for a language like Camille.
 
 And so, what started as a crazy idea halfway through my project became one of
 the defining features of the language.
@@ -195,7 +193,7 @@ if you look at second equation! Using the Camille notation that `a :: T` means
 `f :: (Integer, Integer -> Integer)`{: .center}
 
 Now, let's get to the meat of this section! Internally, this would be
-represented as:
+represented in Haskell as:
 
 {% highlight haskell linenos=table %}
 CallableType [Integer, Integer] Integer
@@ -213,12 +211,14 @@ So, that's the type of *f*! The type follows very naturally from the lambda
 calculus definition of *f*.
 
 Now let's look at something a bit more peculiar. What is the type of `1` in
-Camile? Well, obviously its just `Integer`, right?
+Camile? Well, it is clearly just `Integer`---that's not peculiar at all. And how
+would that be stored internally in Haskell? Just as an `Integer`, obviously.
+Right?
 
 **Wrong!** <span>(sorry, I really set you up for failure with that
 question...)</span>{: .mutter}
 
-It is actually of type `Void -> Integer`, i.e. `CallableType [Void] Integer`.
+It is actually internally stored as `CallableType [] Integer`.
 Remember, numbers are actually functions that return their numeric value (which
 itself is technically a function).
 
@@ -247,21 +247,143 @@ like:
 - `printHello :: (Void -> Void)` (imagine we have a function named `printHello`
 that takes no arguments and just prints "Hello" to the terminal)
 
-In our lambda calculus way of expressing things, the our functions would look
-like this:
+In our lambda calculus way of expressing things, our functions would look like
+this:
 
 \\[ 1 = () \mapsto 1 \\]
 \\[ \text{"abc"} = () \mapsto \text{"abc"} \\]
 \\[ \text{printHello} = () \mapsto () \\]
 
 The first two of these functions are clearly infinitely recursive, so instead of
-being implemented in our conceptual way, they are just implemented how integers
-and strings are usually implemented (but they do *behave* like the above
-definitions).
+being implemented in our conceptual way, we will just implement them how
+integers and strings are usually implemented (but they do *behave* like the
+above definitions).
 
-# Implementing `Type.hs`
+## Implementing `Type.hs`
+
+It's finally time to code! We will create an abstract data type (ADT) for our
+language's types.
+
+{% highlight haskell linenos=table %}
+
+module Type where
+
+data Type = VoidType
+          | IntegerType
+          | StringType
+          | BooleanType
+          | CallableType [Type] Type
+
+{% endhighlight %}
+
+Now we will create a critical function that will allow us to handle
+`CallableType` very easily. It will be a simple function that allows us to find
+the "return type" of a type. For example, the return type of `IntegerType` is
+just `IntegerType`, but the return type of `IntegerType -> StringType` is
+`StringType`.
+
+{% highlight haskell linenos=table %}
+
+returnType :: Type -> Type
+returnType (CallableType _ rt) = rt
+returnType t = t
+
+{% endhighlight %}
+
+We can now fill in some basic typeclass instances for Type to make programming
+with them much easier. We can't really used a `deriving` clause because we have
+some complicated behavior that we need to manually fine-tune.
+
+First up is the `Eq` instance:
+
+{% highlight haskell linenos=table %}
+
+instance Eq Type where
+    VoidType               == VoidType               = True
+    IntegerType            == IntegerType            = True
+    StringType             == StringType             = True
+    BooleanType            == BooleanType            = True
+    (CallableType [] rt)   == t                      = rt == returnType t
+    (CallableType ts1 rt1) == (CallableType ts2 rt2) = ts1 == ts2 && rt1 == rt2
+    _                      == _                      = False
+
+{% endhighlight %}
+
+The first four definitions for `==` are the standard ones, but Line 6 is more
+tricky. We declare that if something is of `CallableType` but does not take in
+any parameters, it is equivalent to the raw type itself. This is what allows us
+to conceptually do something like:
+
+\\[ 1 = () \mapsto 1 \\]
+
+Line 7 and 8 are again the standard definitions for `==`.
+
+Here is the `Show` instance:
 
 
+{% highlight haskell linenos=table %}
+
+instance Show Type where
+    show VoidType           = "Void"
+    show IntegerType        = "Integer"
+    show StringType         = "String"
+    show BooleanType        = "Boolean"
+    show CallableType [] rt = show rt
+    show CallableType ts rt =    "("
+                              ++ (intercalate ", " (map show ts))
+                              ++ " -> "
+                              ++ (show rt)
+                              ++ ")"
+
+{% endhighlight %}
+
+The first four definitions are, again, the standard. The first `CallableType`
+definition is analogous to the `Eq` definition. The last definition will, for
+example show `CallableType [IntegerType, StringType] BooleanType` as `(Integer,
+String) -> Boolean`.
+
+...And that's it for our Type ADT! We have successfully captured all that we
+need to know about the types in our language with these lines of code. Next
+time, we will talk about expressions, and make an ADT for them too!
+
+Here is the entire `Type.hs` file, as it stands:
+
+{% highlight haskell linenos=table %}
+
+module Type where
+
+data Type = VoidType
+          | IntegerType
+          | StringType
+          | BooleanType
+          | CallableType [Type] Type
+
+returnType :: Type -> Type
+returnType (CallableType _ rt) = rt
+returnType t = t
+
+instance Eq Type where
+    VoidType               == VoidType               = True
+    IntegerType            == IntegerType            = True
+    StringType             == StringType             = True
+    BooleanType            == BooleanType            = True
+    (CallableType [] rt)   == t                      = rt == returnType t
+    (CallableType ts1 rt1) == (CallableType ts2 rt2) = ts1 == ts2 && rt1 == rt2
+    _                      == _                      = False
+
+instance Show Type where
+    show VoidType           = "Void"
+    show IntegerType        = "Integer"
+    show StringType         = "String"
+    show BooleanType        = "Boolean"
+    show CallableType [] rt = show rt
+    show CallableType ts rt =    "("
+                              ++ (intercalate ", " (map show ts))
+                              ++ " -> "
+                              ++ (show rt)
+                              ++ ")"
+
+{% endhighlight %}
 
 [part1]: {% post_url 2015-08-16-create-your-own-programming-language-part-1 %}
 [repl]: https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop
