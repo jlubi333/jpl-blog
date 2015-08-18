@@ -3,8 +3,6 @@ layout: post
 title: "Create Your Own Programming Language: Part I"
 ---
 
-# Create Your Own Programming Language: Part I
-
 This is **Part I** of a series of blog posts where I will show you how I created
 my own statically-typed, interpreted programming language, Camille. I'm not
 claiming that this is the best way or the most efficient, but it worked for me!
