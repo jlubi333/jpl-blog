@@ -7,8 +7,7 @@ title: "Create Your Own Programming Language: Part II"
 
 Welcome to **Part II** of my tutorial where I show you how to create your own
 programming language! If you haven't already, please read [Part I][part1] to get
-started. As before, I created a language called Camille, but you can name it
-whatever you want!
+started. Let's continue on with Camille!
 
 ## Project Layout
 
@@ -87,7 +86,7 @@ have a value yet if we are just now declaring a type to it! In cases like these,
 or in functions like `print`, the only sensible return value is `Nothing`. Note
 that this is different than *not* having a return value, because you can very
 easily assign something to nothing in Camille <span>(as long as you can handle
-the philosophical implications of such a statement!)</span>{: .mutter}.
+the philosophical implications of such a statement)</span>{: .mutter}.
 
 ## The `Callable` Type (Backstory)
 
@@ -105,11 +104,11 @@ show off its REPL and a few of its feature. At the time, however, I expressed
 that I was struggling with exactly how I was going to implement a type system in
 an interpreted language, and particularly what the type of a function should be.
 I had decided that a function would be solely typed by its return value, but I
-was very unsatisfied with that because that would mean that the type of its
+was very unsatisfied with this because that would mean that the type of its
 arguments would remain unchecked.
 
-I was explaining to the class that everything was going to have be an expression
-with a return type, one of my friends said something along the lines of:
+I was explaining to the class that everything was going to be an expression with
+a return type, but then one of my friends said something along the lines of:
 
 > Wait, so numbers are actually functions?
 
@@ -146,10 +145,6 @@ programmer can actually create.
 Let me explain. `Callable` represents something that is callable
 <span>(duh!)</span>{: .mutter}.  The most obvious callable value is a function.
 
-Just a bit of a warning, the rest of the section is very theory-oriented. If you
-don't really care about *why* I made the design decisions that I did, you can
-just skim this section.
-
 In Camille, functions are nameless, so if we want to reuse them, we must assign
 them to a variable.  Nameless (also known as "anonymous") functions like these
 are typically called lambda functions, or lambdas for short. As such, functions
@@ -158,7 +153,7 @@ are values in Camille, we can easily assign them to variables, so we don't have
 to worry about the fact that functions themselves don't have names.
 
 Let's say we want a function *f* that takes in two integers and returns two
-times the first integer plus the second integer In math, this may be written as:
+times the first integer plus the second integer. In math, this may be written as:
 
 \\[ f(x, y) = 2x + y \\]
 
@@ -192,7 +187,7 @@ The interesting thing to note here is that `CallableType` actually requires two
 parameters in order to actually be a type. So, in Camille, it's not actually
 completely true to say that something is of type `Callable`, because that would
 be like saying something in Haskell is of type `->`. The `Callable` is like `->`
-in Haskell, it requires a left-hand side and a right-hand side. The main
+in Haskell: it requires a left-hand side and a right-hand side. The main
 difference is that functions are not curried in Camille, and so the left hand
 side can be a *list* of types as opposed to just a single type like in Haskell.
 
@@ -257,7 +252,7 @@ returnType t = t
 
 {% endhighlight %}
 
-We can now fill in some basic typeclass instances for Type to make programming
+We can now fill in some basic typeclass instances for `Type` to make programming
 with them much easier. We can't really used a `deriving` clause because we have
 some complicated behavior that we need to manually fine-tune.
 

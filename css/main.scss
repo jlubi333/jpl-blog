@@ -321,7 +321,7 @@ pre {
     overflow: scroll;
 }
 
-p code {
+code {
     background-color: #EEEEEE;
 }
 
@@ -337,6 +337,10 @@ p code {
         border: none;
         border-radius: 0;
         overflow: auto;
+    }
+
+    .highlighttable code {
+        background-color: transparent;
     }
 
 .linenos, .highlight {
