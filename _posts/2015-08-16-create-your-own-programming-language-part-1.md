@@ -206,4 +206,4 @@ Without further ado, [let's-a-go][part2]!
 [wyah]: http://dev.stephendiehl.com/fun/
 [while]: https://wiki.haskell.org/Parsing_a_simple_imperative_language
 [camille]: https://github.com/jlubi333/Camille
-[part2]: {% post_url 2015-08-17-create-your-own-programming-language-part-2 %}
+[part2]: {% post_url 2015-08-18-create-your-own-programming-language-part-2 %}
