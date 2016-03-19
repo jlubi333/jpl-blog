@@ -10,3 +10,10 @@ about_url: "/about/"
 portfolio_url: "http://jlub.in"
 
 highlighter: "rouge"
+
+defaults:
+    -
+        scope:
+            path: ""
+        values:
+            layout: "plain"
