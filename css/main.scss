@@ -5,6 +5,7 @@
 
 $main-color: #3D5499;
 $main-color-darker: #2B3B6B;
+$transition-width: 750px;
 
 /* --- Font Faces --- */
 
@@ -47,9 +48,11 @@ $main-color-darker: #2B3B6B;
 }
 
 body {
+    width: 700px;
     font-family: "Latin Modern", "Garamond", "Baskerville",  serif;
     font-size: 16px;
     background-color: #FCFCFC;
+    margin: auto;
     padding-bottom: 20px;
 }
 
@@ -63,13 +66,8 @@ a:hover {
     color: $main-color-darker;
 }
 
-.page-wrapper {
-    width: 700px;
-    margin: auto;
-}
-
-@media(max-width: 750px) {
-    .page-wrapper {
+@media(max-width: $transition-width) {
+    body {
         width: calc(100% - 50px)
     }
 }
@@ -172,7 +170,7 @@ a:hover {
         color: #000000;
     }
 
-@media(max-width: 750px) {
+@media(max-width: $transition-width) {
     .post-list .post-title {
         width: 100%;
         margin-bottom: 5px;
@@ -208,8 +206,7 @@ a:hover {
 
 .content.post h1,
 .content.post h2,
-.content.post h3
-{
+.content.post h3 {
     font-weight: bold;
     padding: 10px;
 }
