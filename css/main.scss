@@ -5,7 +5,9 @@
 
 $main-color: #3D5499;
 $main-color-darker: #2B3B6B;
+$special-font: "Raleway";
 $transition-width: 750px;
+$post-element-spacing: 0.5em;
 
 /* --- Font Faces --- */
 
@@ -49,11 +51,16 @@ $transition-width: 750px;
 
 body {
     width: 700px;
-    font-family: "Latin Modern", "Garamond", "Baskerville",  serif;
-    font-size: 16px;
+    color: #000000;
     background-color: #FCFCFC;
+    font-family: "Latin Modern", "Garamond", "Baskerville",  serif;
+    font-size: 18px;
     margin: auto;
     padding-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $special-font;
 }
 
 a {
@@ -89,7 +96,7 @@ a:hover {
 
     .site-header h1 {
         font-size: 3em;
-        font-weight: bold;
+        font-weight: 100;
         margin-bottom: 20px;
     }
 
@@ -208,7 +215,7 @@ a:hover {
 .content.post h2,
 .content.post h3 {
     font-weight: bold;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 .content.post h1 {
@@ -228,8 +235,7 @@ a:hover {
 
 .content.post p,
 .content.post li {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    margin-bottom: $post-element-spacing;
 }
 
 .content.post ul,
@@ -249,7 +255,7 @@ a:hover {
 .content.post blockquote {
     background-color: #EEEEEE;
     padding: 15px 20px;
-    margin-bottom: 10px;
+    margin-bottom: $post-element-spacing;
     border-left: 10px solid $main-color;
 }
 
@@ -311,7 +317,7 @@ code {
 }
 
 pre {
-    margin-bottom: 10px;
+    margin-bottom: $post-element-spacing;
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
