@@ -9,4 +9,4 @@ base_url: "/"
 about_url: "/about/"
 portfolio_url: "http://jlub.in"
 
-highlighter: "pygments"
+highlighter: "rouge"
