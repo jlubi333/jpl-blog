@@ -318,61 +318,28 @@ code {
     font-family: "Inconsolata", monospace;
 }
 
-pre {
-    margin-bottom: $post-element-spacing;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-    overflow: scroll;
-}
+    pre.highlight {
+        padding: 10px;
+    }
 
 code {
     background-color: #EEEEEE;
 }
 
-pre code {
-    background-color: transparent;
+.highlight {
+    margin-bottom: $post-element-spacing;
+    border-radius: 5px;
+    border: 1px solid black;
+    overflow: scroll;
 }
 
-.highlighttable {
-    width: 100%;
-    margin: 20px 0;
-    table-layout: fixed;
-}
-
-    .highlighttable pre {
-        margin: 0;
-        padding: 0;
-        border: none;
-        border-radius: 0;
-        overflow: auto;
-    }
-
-    .highlighttable code {
+    .highlight code {
         background-color: transparent;
     }
 
-.linenos, .highlight {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    -ms-box-sizing: content-box;
-    -o-box-sizing: content-box;
-    box-sizing: content-box;
-    padding: 20px 10px;
-}
-
-.linenos {
-    width: 30px;
-    background-color: rgb(52, 61, 69);
-    color: rgb(100, 115, 125);
-    text-align: right;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-.highlight {
-    overflow: scroll;
-    border-right: 10px solid rgb(43, 48, 59);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
+    .highlight pre.lineno {
+        background-color: rgb(52, 61, 69);
+        color: rgb(100, 115, 125);
+        margin-right: 10px;
+        padding: 10px;
+    }
