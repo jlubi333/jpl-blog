@@ -48,12 +48,12 @@ with a way to solve the Tower of Hanoi optimally, and from there, we can count
 how many moves we take.
 
 Let's first lay down some basic ideas. We know that \\(M(n)\\) will give us the
-optimal moves for a stack of size \\(n\\). In fact, \\(n\\) can be any natural
+optimal moves for a stack of size \\(n.\\) In fact, \\(n\\) can be any natural
 number: \\(12\\), \\(7\\), \\(143\\), or even \\(0\\) (\\(M(0) = 0\\) because
 it takes zero moves to move zero rings!). This means that a stack of size, say,
 \\(n - 1\\) will be solvable in \\(M(n-1)\\) moves. We now have all the
 background understanding that we need to find some sort of formula for
-\\(M(n)\\).
+\\(M(n).\\)
 
 I encourage you to think about how you would solve the Towers of Hanoi! What
 strategies might you employ? Is there a way to simplify the problem?
@@ -62,21 +62,21 @@ Before I give you the solution, let me give you one more hint. In situations
 like these, mathematicians tend to ask themselves the following question: how
 can I reduce this complex problem into a smaller, more managable one? In this
 case, consider how one might reduce a puzzle of size \\(n\\) into a puzzle of
-size \\(n - 1\\).
+size \\(n - 1.\\)
 
 ## The Solution
 
 Our goal is to come up with a way to reduce a puzzle of size \\(n\\) into one of
-size \\(n - 1\\). If we can do that, we can actually solve a puzzle of any size!
+size \\(n - 1.\\) If we can do that, we can actually solve a puzzle of any size!
 
-Consider the concrete example where \\(n = 5\\). If we can find a way to express
+Consider the concrete example where \\(n = 5.\\) If we can find a way to express
 this in terms of \\(n - 1\\), then we will only need to solve the puzzle where
-\\(n = 5 - 1 = 4\\). But to solve a puzzle of size \\(4\\), we will only need to
+\\(n = 5 - 1 = 4.\\) But to solve a puzzle of size \\(4\\), we will only need to
 solve a puzzle of size \\(3\\) and use our special reduction rule we came up
 with! And to solve a puzzle of size \\(3\\) we must solve one of size \\(2\\),
 and so on and so forth until we are left with a puzzle of size zero. But we know
 how to solve a puzzle of size zero: there is nothing to do! That is, \\(M(0) =
-0\\).
+0.\\)
 
 Equipped with this knowledge, let's try to come up with the reduction rule. Here
 is my solution:
@@ -101,7 +101,7 @@ Adding up all the moves from each step gives us:
 \\[
 M(n) = M(n - 1) + 1 + M(n - 1) = 2M(n - 1) + 1
 \\]
-with \\(M(0) = 0\\).
+with \\(M(0) = 0.\\)
 
 This will give us the correct answer for any value of \\(n\\), but it is not in
 explicit form. Rather, we must compute the value for \\(M(n)\\) **recursively**.
@@ -133,7 +133,7 @@ M(6) &= 2M(5) + 1 = 2(32) + 1 &= 63
 \end{align}
 \\]
 
-This strengthens our initial, unproved conjecture that \\(M(n) = 2^n - 1\\). But
+This strengthens our initial, unproved conjecture that \\(M(n) = 2^n - 1.\\) But
 can we prove it? <span>(Once again, you know the answer.)</span>{: .mutter}
 
 We will use the technique of [mathematical induction](mathematical-induction) to
@@ -147,14 +147,14 @@ M(0) &= 0 \\\
 \end{align}
 \\]
 
-Now we will let \\(n\\) take on any value \\(k\\). This is our hypothesis step.
+Now we will let \\(n\\) take on any value \\(k.\\) This is our hypothesis step.
 
 \\[
 M(k) \stackrel{?}{=} 2^k - 1
 \\]
 
 And finally we shall prove that if our formula holds for \\(n = k\\), it will
-hold for \\(n = k + 1\\). This is our induction step.
+hold for \\(n = k + 1.\\) This is our induction step.
 
 \\[
 \begin{align}
