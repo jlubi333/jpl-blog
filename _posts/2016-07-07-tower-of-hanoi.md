@@ -159,8 +159,8 @@ hold for \\(n = k + 1\\). This is our induction step.
 \\[
 \begin{align}
 M(k + 1) &= 2M(k) + 1 \\\
-&= 2[2^k - 1] + 1 \\\
-&= 2[2^k - 1] + 1 \\\
+&= 2(2^k - 1) + 1 \\\
+&= 2(2^k - 1) + 1 \\\
 &= 2 \cdot 2^k - 2 + 1 \\\
 &= 2^{k + 1} - 1 \quad\quad\quad \checkmark
 \end{align}
