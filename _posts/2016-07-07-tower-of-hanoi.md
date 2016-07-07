@@ -190,7 +190,7 @@ be interesting to pursue.
 - What happens if there are more than three pegs?
 - For what values of \\(n\\) is \\(M(n)\\) defined? Can we extend this
   definition to include, say, negative numbers? Fractions? Real numbers?
-- What happens if the rings are sized differently than the original problem?
+- What happens if the rings are sized differently than in the original problem?
 
 I don't know the answers to these questions, but these are just a few extensions
 that immediately came to my mind when thinking about the problem. There many be
