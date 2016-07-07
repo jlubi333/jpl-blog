@@ -1,0 +1,20 @@
+<figure>
+    <img src="{{ include.url }}" alt="{{ include.alt }}" width="{% if include.width %}{{include.width}}{% else %}100%{% endif %}">
+    <figcaption>
+    {% if include.caption %}
+    <p class="image-caption">{{ include.caption }}</p>
+    {% endif %}
+    {% if include.source-url %}
+    <p class="image-source">
+        <b>Source</b>:
+        <a href="{{ source-url }}">
+            {% if include.source-name %}
+                {{ include.source-name }}
+            {% else %}
+                {{ include.source-url }}
+            {% endif %}
+        </a>
+    </p>
+    {% endif %}
+    </figcaption>
+</figure>

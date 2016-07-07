@@ -242,8 +242,12 @@ a:hover {
 
 .content.post ul,
 .content.post ol {
-    list-style-position: inside;
-    margin-left: 10px;
+    list-style-position: outside;
+    margin-left: 30px;
+}
+
+.content.post li {
+    padding-left: 10px;
 }
 
 .content.post ul {
@@ -252,6 +256,42 @@ a:hover {
 
 .content.post ol {
     list-style-type: decimal;
+}
+
+.content.post figure {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #000000;
+}
+
+    .content.post figure figcaption {
+        background-color: #EEEEEE;
+        font-size: 0.8em;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #000000;
+        border-left: 10px solid $main-color;
+        border-right: 10px solid $main-color;
+    }
+
+    .content.post figure figcaption p {
+        margin: 0;
+    }
+
+.content.post table {
+    margin: 10px auto;
+    border: 2px solid #000000;
+}
+
+    .content.post table td,
+    .content.post table th {
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #000000;
+    }
+
+    .content.post table th {
+        border-bottom-width: 2px;
 }
 
 .content.post blockquote {
