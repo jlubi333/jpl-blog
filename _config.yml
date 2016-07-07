@@ -5,6 +5,8 @@ email: "jlubi333@gmail.com"
 
 url: "http://blog.jlub.in"
 
+permalink: pretty
+
 base_url: "/"
 about_url: "/about/"
 portfolio_url: "http://jlub.in"
