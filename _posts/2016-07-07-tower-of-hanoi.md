@@ -25,9 +25,10 @@ rings. This is actually a very fun question to explore!
 
 ## The Minimum Number of Moves
 
-Let's let \\(M(n)\\) denote the minimum number of moves to solve the Tower of Hanoi
-puzzle with \\(n\\) rings. Assuming that the interactive game I linked to is
-accurate (trust me, it is---and we'll prove it later!), we can create the following table:
+Let's let \\(M(n)\\) denote the minimum number of moves to solve the Tower of
+Hanoi puzzle with \\(n\\) rings. Assuming that the interactive game I linked to
+is accurate (trust me, it is---and we'll prove it later!), we can create the
+following table:
 
 | \\(n\\) | \\(M(n)\\) |
 |---------|------------|
