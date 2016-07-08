@@ -5,7 +5,7 @@ title: "The Tower of Hanoi"
 
 {% include math %}
 
-The [Tower of Hanoi](tower-wikipedia) is a fun mathematical puzzle involving
+The [Tower of Hanoi][tower-wikipedia] is a fun mathematical puzzle involving
 moving rings on three pegs.
 
 {% include image url="https://upload.wikimedia.org/wikipedia/commons/0/07/Tower_of_Hanoi.jpeg"
@@ -17,7 +17,7 @@ The game starts with a set of rings stacked one atop the other in decreasing
 size on the left-most peg. The goal of the game is to move all of the rings
 from the left-most peg to the right-most peg. The only restriction is that you
 cannot place a larger ring on top of a smaller ring. If you want to try it out
-yourself, [here](game) is a link to an online version of the game.
+yourself, [here][game] is a link to an online version of the game.
 
 In the bottom-left of the game window, you will see that the game displays the
 minimum number of moves needed to complete the puzzle for a given number of
@@ -110,7 +110,7 @@ In other words, to calculuate (for example) \\(M(100)\\), we must calculuate
 \\(M(99)\\), and to calculuate \\(M(99)\\), we must calculuate \\(M(98)\\), and
 so on and so forth. That's a huge number of computations for one simple answer!
 Using this recursive formula (formally known as a [recurrence
-relation](recurrence-relation)), can we come up with a better, explicit formula
+relation][recurrence-relation]), can we come up with a better, explicit formula
 for \\(M(n)\\)?
 
 Based on the previous leading questions that I've asked you in this blog post,
@@ -137,7 +137,7 @@ M(6) &= 2M(5) + 1 = 2(31) + 1 &= 63
 This strengthens our initial, unproved conjecture that \\(M(n) = 2^n - 1.\\) But
 can we prove it? <span>(Once again, you know the answer.)</span>{: .mutter}
 
-We will use the technique of [mathematical induction](mathematical-induction) to
+We will use the technique of [mathematical induction][mathematical-induction] to
 prove this. First, we will prove that our formula works for our "base case" of
 \\(n = 0\\):
 
