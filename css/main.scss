@@ -259,7 +259,7 @@ a:hover {
 }
 
 .content.post figure {
-    margin: 10px;
+    margin: $post-element-spacing;
     padding: 10px;
     border: 1px solid #000000;
 }
@@ -279,7 +279,7 @@ a:hover {
     }
 
 .content.post table {
-    margin: 10px auto;
+    margin: $post-element-spacing auto;
     border: 2px solid #000000;
 }
 
@@ -353,33 +353,49 @@ a:hover {
 
 /* --- Code --- */
 
-pre,
-code {
+.content.post pre,
+.content.post code {
     font-family: "Inconsolata", monospace;
 }
 
-    pre.highlight {
+    .content.post pre.highlight {
         padding: 10px;
     }
 
-code {
+.content.post code {
     background-color: #EEEEEE;
 }
 
-.highlight {
+.content.post .highlight {
     margin-bottom: $post-element-spacing;
     border-radius: 5px;
-    border: 1px solid black;
-    overflow: scroll;
+    overflow-x: auto;
 }
 
-    .highlight code {
+    .content.post .highlight code {
         background-color: transparent;
     }
 
-    .highlight pre.lineno {
+    .content.post .highlight pre.lineno {
         background-color: rgb(52, 61, 69);
         color: rgb(100, 115, 125);
         margin-right: 10px;
         padding: 10px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
     }
+
+    .content.post .highlight table {
+        margin: 0;
+        border: none;
+    }
+
+        .content.post .highlight table td,
+        .content.post .highlight table th {
+            text-align: left;
+            padding: 0;
+            border: none;
+        }

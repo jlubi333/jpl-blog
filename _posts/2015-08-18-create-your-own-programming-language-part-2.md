@@ -179,9 +179,9 @@ if you look at second equation! Using the Camille notation that `a :: T` means
 Now, let's get to the meat of this section! Internally, this would be
 represented in Haskell as:
 
-{% highlight haskell linenos=table %}
+```haskell
 CallableType [Integer, Integer] Integer
-{% endhighlight %}
+```
 
 The interesting thing to note here is that `CallableType` actually requires two
 parameters in order to actually be a type. So, in Camille, it's not actually
@@ -226,8 +226,7 @@ I'd be lying if this absurdity  wasn't one of my favorite parts of Camille.
 It's finally time to code! We will create an abstract data type (ADT) for our
 language's types.
 
-{% highlight haskell linenos=table %}
-
+```haskell
 module Type where
 
 data Type = VoidType
@@ -235,8 +234,7 @@ data Type = VoidType
           | StringType
           | BooleanType
           | CallableType [Type] Type
-
-{% endhighlight %}
+```
 
 Now we will create a critical function that will allow us to handle
 `CallableType` very easily. It will be a simple function that allows us to find
@@ -244,13 +242,11 @@ the "return type" of a type. For example, the return type of `IntegerType` is
 just `IntegerType`, but the return type of `IntegerType -> StringType` is
 `StringType`.
 
-{% highlight haskell linenos=table %}
-
+```haskell
 returnType :: Type -> Type
 returnType (CallableType _ rt) = rt
 returnType t = t
-
-{% endhighlight %}
+```
 
 We can now fill in some basic typeclass instances for `Type` to make programming
 with them much easier. We can't really used a `deriving` clause because we have
@@ -258,8 +254,7 @@ some complicated behavior that we need to manually fine-tune.
 
 First up is the `Eq` instance:
 
-{% highlight haskell linenos=table %}
-
+```haskell
 instance Eq Type where
     VoidType               == VoidType               = True
     IntegerType            == IntegerType            = True
@@ -268,8 +263,7 @@ instance Eq Type where
     (CallableType [] rt)   == t                      = rt == returnType t
     (CallableType ts1 rt1) == (CallableType ts2 rt2) = ts1 == ts2 && rt1 == rt2
     _                      == _                      = False
-
-{% endhighlight %}
+```
 
 The first four definitions for `==` are the standard ones, but Line 6 is more
 tricky. We declare that if something is of `CallableType` but does not take in
@@ -282,9 +276,7 @@ Line 7 and 8 are again the standard definitions for `==`.
 
 Here is the `Show` instance:
 
-
-{% highlight haskell linenos=table %}
-
+```haskell
 instance Show Type where
     show VoidType           = "Void"
     show IntegerType        = "Integer"
@@ -295,9 +287,8 @@ instance Show Type where
                               ++ (intercalate ", " (map show ts))
                               ++ " -> "
                               ++ (show rt)
-                              ++ ")"
-
-{% endhighlight %}
+                          ++ ")"
+```
 
 The first four definitions are, again, the standard. The first `CallableType`
 definition is analogous to the `Eq` definition. The last definition will, for
@@ -310,8 +301,7 @@ time, we will talk about expressions, and make an ADT for them too!
 
 Here is the entire `Type.hs` file, as it stands:
 
-{% highlight haskell linenos=table %}
-
+```haskell
 module Type where
 
 data Type = VoidType
@@ -344,8 +334,7 @@ instance Show Type where
                               ++ " -> "
                               ++ (show rt)
                               ++ ")"
-
-{% endhighlight %}
+```
 
 [part1]: {% post_url 2015-08-16-create-your-own-programming-language-part-1 %}
 [repl]: https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop

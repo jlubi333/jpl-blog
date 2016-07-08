@@ -52,36 +52,38 @@ first time!
 
 For an idea of what I did, here is my specification document in its full glory:
 
-    identifier-first ::= <letter> | _
-    identifier-rest  ::= <alpha-num> | _
-    identifier       ::= <identifier-first> <identifier-rest>*
-    nothing          ::= Nothing
-    block            ::= <type> { <expression>* }
-    integer          ::= <digit>
-    string           ::= " <ascii-char>* "
-    boolean          ::= False | True
-    if               ::= if <expression> <expression> [else <expression>]
-    type             ::= Void | Integer | String | Boolean
-    type-declaration ::= <type> <space> <identifier>
-    fparams          ::= <type-declaration> [, <type-declaration>]*
-    fargs            ::= <expression> [, <expression>]*
-    lambda           ::= \ ( <fparams> ) -> <expression>
-    fcall            ::= <identifier> ( [<fargs>] )
-    assignment       ::= <identifier> = <expression>
-    ret              ::= ret <expression>
-    variable         ::= <identifier>
-    expression       ::= <nothing>
-                       | <block>
-                       | <integer>
-                       | <string>
-                       | <boolean>
-                       | <if>
-                       | <lambda>
-                       | <ret>
-                       | <type-declaration>
-                       | <fcall>
-                       | <assignment>
-                       | <variable>
+```
+identifier-first ::= <letter> | _
+identifier-rest  ::= <alpha-num> | _
+identifier       ::= <identifier-first> <identifier-rest>*
+nothing          ::= Nothing
+block            ::= <type> { <expression>* }
+integer          ::= <digit>
+string           ::= " <ascii-char>* "
+boolean          ::= False | True
+if               ::= if <expression> <expression> [else <expression>]
+type             ::= Void | Integer | String | Boolean
+type-declaration ::= <type> <space> <identifier>
+fparams          ::= <type-declaration> [, <type-declaration>]*
+fargs            ::= <expression> [, <expression>]*
+lambda           ::= \ ( <fparams> ) -> <expression>
+fcall            ::= <identifier> ( [<fargs>] )
+assignment       ::= <identifier> = <expression>
+ret              ::= ret <expression>
+variable         ::= <identifier>
+expression       ::= <nothing>
+                   | <block>
+                   | <integer>
+                   | <string>
+                   | <boolean>
+                   | <if>
+                   | <lambda>
+                   | <ret>
+                   | <type-declaration>
+                   | <fcall>
+                   | <assignment>
+                   | <variable>
+```
 
 I know it looks kind of scary, but like I said before, it's actually really
 helpful. We will start with a much more basic version, and I'll introduce more
@@ -90,17 +92,19 @@ complexity as we go along until we get to this full version.
 So what does Camille look like in practice? Here's a sneak peak at our final
 goal, the solution to a Project Euler problem written in our very own language!
 
-    f :: (Integer, Integer, Integer, Integer -> Integer)
-    f = \(max :: Integer, acc :: Integer, prev :: Integer, cur :: Integer) -> Integer {
-        if gt(cur, max) ret acc
-        else ret Integer {
-            next :: Integer
-            next = add(prev, cur)
-            if eq(mod(next, 2), 0) ret f(max, add(next, acc), cur, next)
-            else ret f(max, acc, cur, next)
-        }
+```
+f :: (Integer, Integer, Integer, Integer -> Integer)
+f = \(max :: Integer, acc :: Integer, prev :: Integer, cur :: Integer) -> Integer {
+    if gt(cur, max) ret acc
+    else ret Integer {
+        next :: Integer
+        next = add(prev, cur)
+        if eq(mod(next, 2), 0) ret f(max, add(next, acc), cur, next)
+        else ret f(max, acc, cur, next)
     }
-    print(f(4000000, 0, 0, 1))
+}
+print(f(4000000, 0, 0, 1))
+```
 
 Can you tell which Project Euler problem it is?
 
@@ -160,7 +164,9 @@ will just be using Parsec as a nice library that makes parsing text very easy.
 
 To install Parsec, just type the following into the command line:
 
-    cabal install parsec
+```
+cabal install parsec
+```
 
 Parsec should work right out of the box.
 

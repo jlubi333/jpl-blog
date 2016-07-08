@@ -5,10 +5,23 @@ email: "jlubi333@gmail.com"
 
 url: "http://blog.jlub.in"
 
-permalink: pretty
+permalink: "pretty"
 
 base_url: "/"
 about_url: "/about/"
 portfolio_url: "http://jlub.in"
 
+markdown: "kramdown"
 highlighter: "rouge"
+
+
+kramdown:
+  input: "GFM"
+  syntax_highlighter: "rouge"
+  syntax_highlighter_opts:
+    css_class: "highlight"
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
