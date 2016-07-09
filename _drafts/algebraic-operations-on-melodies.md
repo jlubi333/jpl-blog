@@ -110,25 +110,59 @@ pitches:
 1. F
 1. F♯/G♭
 1. G
-1. G♯/A♭.
+1. G♯/A♭
 
-You'll notice that I've listed twelve pitches, but you know as well as I that
+You'll notice that I've listed twelve pitches, but you know as well as I do that
 there are many more than just twelve keys on a piano. Even in the picture above
-you can see more than twelve! The reason for this is that this twelve-note
-group of notes repeats itself all the way up and down the piano. So, in
-reality, there actually multiple notes that we would call "C," but all their
-frequencies are so closely related to each other that they all sound like a C
-to us.
+you can see way more than twelve keys! The reason for this is that this group of
+twelve pitches repeats itself all the way up and down the piano. So, in reality,
+there are actually multiple notes that we would call "C," but all their
+frequencies are so closely related to each other that they all sound like a C to
+us. The set of all C's forms a *pitch class*, whereas one individual C (with a
+particular frequency) would be what we call a pitch.
 
-Each C resides in a different *octave*, but they are all the same note.
+Every C resides in a different *octave*, but they are all the same pitch class.
 To get from a note that is in one octave to the same note in the octave above,
 all you need to do is multiply its frequency by two. So, if we know that one C
 has a frequency of 440 Hz, we also know that 880 Hz and 220 Hz represent C as
-well.
+well. So while 440 Hz and 220 Hz are different pitches, they are in the same
+pitch *class* (C).
 
-## Operations on Notes
+### Operations on Pitch Classes
 
-So, what can we do with these notes?
+So, what can we do with these pitch classes? Well, one thing we could talk about
+would be some sort of a notion of distance between them. Looking at the picture
+of the piano (or our listing of pitch classes), it would be reasonable to say
+that, for example, the distance from A to A_S_ is one, the distance from A to B
+is two, and the distance from C to G is seven.
+
+Let's define a function \\( d \\) (for distance) that determines how far you
+have to travel to get from one pitch class to another. Using the above examples,
+we have:
+
+- \\( d(A, A_S_) = 1 \\)
+- \\( d(A, B) = 2 \\)
+- \\( d(C, G) = 7 \\)
+
+Similarly, we might want to have a function that will give us a pitch class if
+we add a particular distance to another pitch class. Let's call this function
+\\( a \\) (for add). We have:
+
+- \\( a(A, 1) = A_S_ \\)
+- \\( a(A, 2) = B \\)
+- \\( a(C, 7) = G \\)
+
+Hmm... there seems to be a pattern here. Our two functions, \\(d\\) and \\(a\\)
+seem to be very closely related. But let's continue on.
+
+We run into a little bit of trouble with our functions if we explore around the
+edges of our group of pitch classes. For example, what is \\(a(G♯, 1)\\)? There
+doesn't seem to be anything "above" a G♯. However, remember that our pitch
+classes repeat themselves! One note above G♯ is A! Our pitch class "wraps
+around" and goes back to the first element. In fact, this is the same behavior
+as the hands on a clock! If you add two hours to eleven o'clock, you don't end
+up with thirteen o'clock---the numbers wrap around and you are left with one
+o'clock.
 
 [msc]: https://education.wolfram.com/summer/camp/programs/mathematica/
 [aoon]: http://demonstrations.wolfram.com/AlgebraicOperationsOnMelodies/
