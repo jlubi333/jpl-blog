@@ -105,7 +105,7 @@ M(n) = M(n - 1) + 1 + M(n - 1) = 2M(n - 1) + 1
 with \\(M(0) = 0.\\)
 
 This will give us the correct answer for any value of \\(n\\), but it is not in
-explicit form. Rather, we must compute the value for \\(M(n)\\) **recursively**.
+explicit form. Rather, we must compute the value for \\(M(n)\\) *recursively*.
 In other words, to calculuate (for example) \\(M(100)\\), we must calculuate
 \\(M(99)\\), and to calculuate \\(M(99)\\), we must calculuate \\(M(98)\\), and
 so on and so forth. That's a huge number of computations for one simple answer!
