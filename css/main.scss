@@ -305,6 +305,16 @@ a:hover {
         margin: 0;
     }
 
+    .content.post blockquote cite {
+        display: block;
+        font-style: italic;
+        text-align: right;
+    }
+
+        .content.post blockquote cite:before {
+            content: "\2014"
+        }
+
 .content.post i,
 .content.post em {
     font-style: italic;
