@@ -7,7 +7,7 @@
     {% if include.source-url %}
     <p class="image-source">
         <b>Source</b>:
-        <a href="{{ source-url }}">
+        <a href="{{ include.source-url }}">
             {% if include.source-name %}
                 {{ include.source-name }}
             {% else %}
