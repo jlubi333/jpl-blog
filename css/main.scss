@@ -72,6 +72,20 @@ a:hover {
     color: $main-color-alternate;
 }
 
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
 @media(max-width: $transition-width) {
     body {
         width: calc(100% - 50px)
@@ -323,6 +337,10 @@ a:hover {
 .content.post b,
 .content.post strong {
     font-weight: bold;
+}
+
+.content.post .reversefootnote {
+    text-decoration: none;
 }
 
 .content.post .center {
