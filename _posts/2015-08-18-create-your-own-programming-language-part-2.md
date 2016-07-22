@@ -287,7 +287,7 @@ instance Show Type where
                               ++ (intercalate ", " (map show ts))
                               ++ " -> "
                               ++ (show rt)
-                          ++ ")"
+                              ++ ")"
 ```
 
 The first four definitions are, again, the standard. The first `CallableType`
