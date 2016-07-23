@@ -198,7 +198,6 @@ class.  Let's call this function \\( a \\) (for add). We have:
 What properties do we have with this function? Glad you asked! Here are some
 that I spot:
 
-- \\( a(x, y) = a(y, x) \\)
 - \\( a(x, d(x, y)) = y \\)
 - \\( a(a(x, d), -d) = x \\)
 - \\( a(x, 0) = x \\)
@@ -208,6 +207,16 @@ Can you think of any others?
 The properties that I have listed should actually make a lot of sense. In
 fact... they actually look really, really similar to some other operations that
 I am sure you are very familiar with!
+
+We run into a little bit of trouble with our functions if we explore around the
+edges of our group of pitch classes. For example, what is \\(a(G♯, 1)\\)? There
+doesn't seem to be anything "above" a G♯. However, remember that our pitch
+classes repeat themselves; one note above G♯ is A! Our pitch class "wraps
+around" and goes back to the first element. In fact, this is the same behavior
+as the hands on a clock! If you add two hours to eleven o'clock, you don't end
+up with thirteen o'clock---the numbers wrap around and you are left with one
+o'clock. In mathematics, we call this *modular* arithmetic. We will return to
+this idea later.
 
 To explore these operations and their properties more, let us first go back to
 our old friend, the set of integers, and see if we can make sense of these
@@ -229,21 +238,174 @@ properties, rather than discovering these properties about \\( d \\) after the
 fact. They are intuitive truths upon which we build our function.
 
 This same notion of laws applies to our other function, \\( a \\). One readily
-apparent function that satisfies our \\( a \\) laws for the integers is just
+apparent function over the integers that satisfies the laws of \\( a \\) is just
 ordinary addition:
 
-- \\( 7 + 3 = 10 \\)
-- \\( 3 + 7 = 10 \\)
 - \\( 5 + (8 - 5) = 8 \\)
 - \\( 6 + 2 - 2 = 6 \\)
 - \\( 9 + 0 = 0 \\)
 
+And so, it seems as if, for the integers, \\( d(x, y) = y - x \\) and \\( a(x,
+n) = x + n \\).
 
+Let us see if we can formalize this, and perhaps prove that
+ordinary subtraction and addition really do fit our laws for \\( d \\) and \\( a
+\\).
 
+### Formalizing Our Operations
+
+Let us first focus on our \\( a \\) function. We are now ready to formally
+define exactly the laws that a function must follow if it wishes to serve as an
+\\( a \\) function. This will allow us to generalize our \\( a \\) function to
+pretty much anything we can think of, including music (which is how we got into
+this whole formalization business in the first place).
+
+Firstly, we want \\( a \\) to be *associative*. All this means is that \\(
+a(a(x, y), z) = a(x, a(y, z)) \\). Ordinary addition follows this law for
+integers: (x + y) + z = x + (y + z).
+
+Secondly, we want there to be an *identity element* for the set over which \\( a
+\\) operates. Again, this is a really fancy word for a very simple concept;
+simply put, we want an object \\( e \\) to exist such that \\( a(x, e) = a(e, x)
+= x \\). And once again, ordinary addition follows this law for integers. In
+this case, \\( e = 0 \\), and so we have: \\(x + 0 = 0 + x = x \\).
+
+Thirdly, we want there to be an *inverse element* for every object in the set
+over which \\( a \\) operates. This means that for every object in the set,
+there should be a corresponding object that "undoes" \\( a \\) when combined
+with the original object. If our original element is notated \\( x \\), then the
+inverse element is typically notated \\( x^{-1} \\). For integers under ordinary
+addition, \\(x^{-1} = -x\\) (this is not to be confused with the multiplicative
+inverse; we are talking about addition here). As a concrete example, the inverse
+element under addition for the integer \\(5\\) is \\(-5\\), for \\(3\\) it is
+\\(-3\\), and for \\(0\\) it is \\(0\\).
+
+Lastly, we have a property that is a little bit weird. However, it is very nice
+to have, and cannot be proven from the three laws above. It should be so
+intuitive as to be redundant, but it is necessary to list. We want \\(a\\) to
+exhibit a property known as *closure*: that \\( a(x, y) \\) is always in the
+same set as \\(x\\) and \\(y\\). In the case of integers, this means that adding
+two integers will always result in another integer. An example of an operation
+that is **not** closed over the integers would be division: \\(3 \div 2 \\) is
+\\(1.5\\), which is clearly not an integer.
+
+And so, because addition over the integers passes the above four tests, we can
+hereby decree it to be an official representative of the society of \\(a\\)!
+Woohoo!
+
+In other words, addition follows all of the laws that we expect \\(a\\) to
+follow, and so if we were to define \\(a\\) over the integers, letting \\(a(x,
+y) = x + y\\) would be a perfectly valid thing to do.
+
+This process will also work with real numbers and addition. It will also work
+with the positive real numbers and multiplication. Try working out \\(a\\) for
+different sets of numbers, or even seemingly non-mathematical things like food
+or crochet! The applications are limited only by your imagination. Sometimes you
+will find something that works (as in the case of addition over the integers),
+and other times you will find that it will not work (such as in the case of
+multiplication over the integers). Each time you try it out, the operation,
+identity element, and inverse elements will all be different. It's very fun to
+try to stretch your brain to come up with ways to fit this mathematical
+abstraction to the real world, and in many cases, you will find the operation to
+be very intuitive in the end!
+
+Speaking of real world applications... let's get back to the music!
+
+...But first, let's talk about our original function, \\( d \\). It turns out
+that our definition of \\(a\\) is powerful enough to be able to define \\(d\\)
+in terms of \\(a\\). This means that we don't need to come up with a new set of
+laws! We can rely on the fact that we proved \\(a\\) to be correct, and so we
+know that \\(d\\) has solid mathematical grounding. It's quite a simple
+definition, but it uses the important fact that every element must have an
+inverse. We let \\( d(x, y) = a(y, x^{-1})\\), and we're done. For integers,
+this means that \\( d(x, y) = a(y, -x) = y - x\\), which is exactly what we said
+before. We can now prove our properties about \\(d\\), too. For the case of
+integers, we have:
+
+- \\( -d(y, x) = -(x - y) = -x + y = y - x = d(x, y) \\)
+- \\( d(x, x) = x - x = 0 \\)
+
+As you can see, \\(d\\) is redundant when we have the awesome power of \\(a\\).
+
+Oh, by the way, you just did some of that [abstract algebra](algebra) stuff.
+Specifically, you just learned the basics of [group theory](group-theory). An
+operation that follows our \\(a\\) laws, combined with a set of objects (like
+the integers), forms a [group](group). And that's really, really cool. Integers
+under addition form a group, rotations of polygons form a group, Rubik's cube
+permutations form a group, "clock" (modular) arithmetic forms a group, and
+finally, we can of course, apply group theory to music. All of these can be
+described in terms of our all-powerful \\(a\\) laws (the \\(a\\) laws are
+formally called the *group laws*, by the way, but I hadn't wanted to throw out
+the term group before now).
+
+*Now* let's get back to the music!
+
+### Operations on Pitch Classes (Revisited)
+
+We run into some issues if we try to formulate \\(a\\) as we did before: most
+egregiously, our definition of \\(a\\) for pitch classes takes in a pitch class
+and an integer---that's not how groups work! Groups utilize one set, and one set
+only. We can't deal with both pitch classes and integers at the same time; they
+are incompatible! Or are they? What if pitch classes *were* integers? Then we
+would only be dealing with one set: the integers (or the pitch classes, because
+saying "pitch classes" would be synonymous with saying "integers").
+
+But no, that's ridiculous. There are an infinite number of integers, and only
+twelve pitch classes. But you know what else there is twelve of? Hours in a day.
+Coincidence? Yeah, pretty much... or is it?
+
+Yeah, it is. *However*, we can borrow the idea of modular arithmetic from clocks
+and apply it here beautifully. Remember that our pitch classes behave just like
+the hands on a clock: one semitone above G♯ is A. In a sense, twelve (G♯)
+"equals" zero (A). In the case of the integers, we would say that twelve is
+equal to zero (modulo twelve). This is written out as \\(12 \equiv 0\
+(\text{mod}\ 12)\\). We could also say that, for example, \\(14 \equiv 2\
+(\text{mod}\ 12)\\) and \\(5 \equiv 2\ (\text{mod}\ 3)\\).
+
+And so, we can create a group for integers from zero to twelve (or any
+upper bound) with the operation of "clock" (modular) arithmetic. You can verify
+that all the laws hold, if you wish. One interesting thing to take note of is
+the inverse element in this group; because there are no longer negative numbers,
+the inverse element must be something else. If you think about it, winding the
+clock back one hour is the same as moving it ahead by eleven. I'm sure you have
+had the experience of trying to set an old clock to a particular time, only to
+accidentally pass a certain number, which results in you having to increase all
+the way past twelve hours and go back to the number you wanted (it's even worse
+for minutes, because you're working modulo sixty). This is the concept of an
+inverse element working in real life---you've been working with inverse elements
+for longer than you've thought!
+
+Now that we have a group for our clock numbers (zero through twelve), we are but one step away from
+creating a group for our pitch classes. In fact, we pretty much already did so!
+We mapped every pitch class to a clock number, so wherever we see a clock
+number, we can replace it with the corresponding pitch class, and vice versa.
+This one-to-one mapping is called an [isomorphism](iso) in group theory. Look at
+you, learning all these fancy words for simple concepts!
+
+And so, it is time to define our first proper operation on pitch classes. How
+exciting! Well, in reality, we'll just be using our old clock arithmetic with a
+fancy new name. In pitchclassland, clock arithmetic becomes the new and shiny
+"pitch shift" operator! We'll denote it as TODO. It is exactly our original
+definition of \\(a\\), but now with all the kinks worked out.
 
 
 
 ---
+---
+---
+---
+---
+---
+---
+---
+
+If you want to be truly mind blown, look at [this](mse) Math StackExchange
+post once you are comfortable with the notion of a group. My mind
+figuratively exploded when I read this for the first time.
+
+---
+We will let \\(A = 0\\), \\(A♯ = 1\\),
+\\(B = 2\\), \\(C = 3\\), \\(...\\), \\(G = 10,\\) and \\(G♯ = 11\\).
 
 It appears as if we have found another general property of our function, \\( a
 \\)! \\( a(x, y) = a(x, y) \\)
@@ -251,18 +413,13 @@ It appears as if we have found another general property of our function, \\( a
 Hmm... there seems to be a pattern here. Our two functions, \\(d\\) and \\(a\\)
 seem to be very closely related. But let's continue on.
 
-We run into a little bit of trouble with our functions if we explore around the
-edges of our group of pitch classes. For example, what is \\(a(G♯, 1)\\)? There
-doesn't seem to be anything "above" a G♯. However, remember that our pitch
-classes repeat themselves! One note above G♯ is A! Our pitch class "wraps
-around" and goes back to the first element. In fact, this is the same behavior
-as the hands on a clock! If you add two hours to eleven o'clock, you don't end
-up with thirteen o'clock---the numbers wrap around and you are left with one
-o'clock. In mathematics, we call this *modular* arithmetic.
-
 [msc]: https://education.wolfram.com/summer/camp/programs/mathematica/
 [aoon]: http://demonstrations.wolfram.com/AlgebraicOperationsOnMelodies/
 [algebra]: https://en.wikipedia.org/wiki/Abstract_algebra
 [haskell]: https://www.haskell.org/
 [category]: https://en.wikipedia.org/wiki/Category_theory
 [overtones]: https://en.wikipedia.org/wiki/Overtone
+[mse]: http://math.stackexchange.com/a/1151115/161819
+[group-theory]: https://en.wikipedia.org/wiki/Group_theory
+[group]: https://en.wikipedia.org/wiki/Group_(mathematics)
+[iso]: https://en.wikipedia.org/wiki/Isomorphism
