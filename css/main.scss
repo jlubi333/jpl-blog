@@ -339,10 +339,6 @@ sub {
     font-weight: bold;
 }
 
-.content.post .reversefootnote {
-    text-decoration: none;
-}
-
 .content.post .center {
     display: block;
     text-align: center;
@@ -427,3 +423,15 @@ sub {
             padding: 0;
             border: none;
         }
+
+/* -- Footnotes --*/
+
+.content.post .reversefootnote {
+    text-decoration: none;
+}
+
+.content.post .footnotes {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dotted #000;
+}

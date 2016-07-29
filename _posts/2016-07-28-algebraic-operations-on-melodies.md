@@ -260,34 +260,31 @@ define exactly the laws that a function must follow if it wishes to serve as an
 pretty much anything we can think of, including music (which is how we got into
 this whole formalization business in the first place).
 
-Firstly, we want \\( a \\) to be *associative*. All this means is that \\(
-a(a(x, y), z) = a(x, a(y, z)) \\). Ordinary addition follows this law for
-integers: (x + y) + z = x + (y + z).
-
-Secondly, we want there to be an *identity element* for the set over which \\( a
-\\) operates. Again, this is a really fancy word for a very simple concept;
-simply put, we want an object \\( e \\) to exist such that \\( a(x, e) = a(e, x)
-= x \\). And once again, ordinary addition follows this law for integers. In
-this case, \\( e = 0 \\), and so we have: \\(x + 0 = 0 + x = x \\).
-
-Thirdly, we want there to be an *inverse element* for every object in the set
-over which \\( a \\) operates. This means that for every object in the set,
-there should be a corresponding object that "undoes" \\( a \\) when combined
-with the original object. If our original element is notated \\( x \\), then the
-inverse element is typically notated \\( x^{-1} \\). For integers under ordinary
-addition, \\(x^{-1} = -x\\) (this is not to be confused with the multiplicative
-inverse; we are talking about addition here). As a concrete example, the inverse
-element under addition for the integer \\(5\\) is \\(-5\\), for \\(3\\) it is
-\\(-3\\), and for \\(0\\) it is \\(0\\).
-
-Lastly, we have a property that is a little bit weird. However, it is very nice
-to have, and cannot be proven from the three laws above. It should be so
-intuitive as to be redundant, but it is necessary to list. We want \\(a\\) to
-exhibit a property known as *closure*: that \\( a(x, y) \\) is always in the
-same set as \\(x\\) and \\(y\\). In the case of integers, this means that adding
-two integers will always result in another integer. An example of an operation
-that is **not** closed over the integers would be division: \\(3 \div 2 \\) is
-\\(1.5\\), which is clearly not an integer.
+- Firstly, we want \\( a \\) to be *associative*. All this means is that \\(
+  a(a(x, y), z) = a(x, a(y, z)) \\). Ordinary addition follows this law for
+  integers: (x + y) + z = x + (y + z).
+- Secondly, we want there to be an *identity element* for the set over which \\(
+  a \\) operates. Again, this is a really fancy word for a very simple concept;
+  simply put, we want an object \\( e \\) to exist such that \\( a(x, e) = a(e,
+  x) = x \\). And once again, ordinary addition follows this law for integers.
+  In this case, \\( e = 0 \\), and so we have: \\(x + 0 = 0 + x = x \\).
+- Thirdly, we want there to be an *inverse element* for every object in the set
+  over which \\( a \\) operates. This means that for every object in the set,
+  there should be a corresponding object that "undoes" \\( a \\) when combined
+  with the original object. If our original element is notated \\( x \\), then
+  the inverse element is typically notated \\( x^{-1} \\). For integers under
+  ordinary addition, \\(x^{-1} = -x\\) (this is not to be confused with the
+  multiplicative inverse; we are talking about addition here). As a concrete
+  example, the inverse element under addition for the integer \\(5\\) is
+  \\(-5\\), for \\(3\\) it is \\(-3\\), and for \\(0\\) it is \\(0\\).
+- Lastly, we have a property that is a little bit weird. However, it is very
+  nice to have, and cannot be proven from the three laws above. It should be so
+  intuitive as to be redundant, but it is necessary to list. We want \\(a\\) to
+  exhibit a property known as *closure*: that \\( a(x, y) \\) is always in the
+  same set as \\(x\\) and \\(y\\). In the case of integers, this means that
+  adding two integers will always result in another integer. An example of an
+  operation that is **not** closed over the integers would be division: \\(3
+  \div 2 \\) is \\(1.5\\), which is clearly not an integer.
 
 And so, because addition over the integers passes the above four tests, we can
 hereby decree it to be an official representative of the society of \\(a\\)!
@@ -327,16 +324,22 @@ integers, we have:
 
 As you can see, \\(d\\) is redundant when we have the awesome power of \\(a\\).
 
-Oh, by the way, you just did some of that [abstract algebra](algebra) stuff.
-Specifically, you just learned the basics of [group theory](group-theory). An
+Oh, by the way, you just did some of that [abstract algebra][algebra] stuff.
+Specifically, you just learned the basics of [group theory][group-theory]. An
 operation that follows our \\(a\\) laws, combined with a set of objects (like
-the integers), forms a [group](group). And that's really, really cool. Integers
-under addition form a group, rotations of polygons form a group, Rubik's cube
-permutations form a group, "clock" (modular) arithmetic forms a group, and
-finally, we can of course, apply group theory to music. All of these can be
-described in terms of our all-powerful \\(a\\) laws (the \\(a\\) laws are
-formally called the *group laws*, by the way, but I hadn't wanted to throw out
-the term group before now).
+the integers), forms a [group][group]. And that's really, really cool. Integers
+under addition form a group, real numbers under multiplication form a
+group[^reals], rotations of polygons form a group, Rubik's cube permutations
+form a group, "clock" (modular) arithmetic forms a group, and finally, we can of
+course, apply group theory to music. All of these can be described in terms of
+our all-powerful \\(a\\) laws (the \\(a\\) laws are formally called the *group
+laws*, by the way, but I hadn't wanted to throw out the term group before now).
+
+[^reals]:
+    If you want to be truly mind blown, look at [this][mse] Math StackExchange
+    post once you are comfortable with the notion of a group (which you should
+    be after the next few sections). My mind figuratively exploded when I read
+    this for the first time.
 
 *Now* let's get back to the music!
 
@@ -354,7 +357,7 @@ But no, that's ridiculous. There are an infinite number of integers, and only
 twelve pitch classes. But you know what else there is twelve of? Hours in a day.
 Coincidence? Yeah, pretty much... or is it?
 
-Yeah, it is. *However*, we can borrow the idea of modular arithmetic from clocks
+Yeah, it is. However, we *can* borrow the idea of modular arithmetic from clocks
 and apply it here beautifully. Remember that our pitch classes behave just like
 the hands on a clock: one semitone above G♯ is A. In a sense, twelve (G♯)
 "equals" zero (A). In the case of the integers, we would say that twelve is
@@ -375,43 +378,128 @@ for minutes, because you're working modulo sixty). This is the concept of an
 inverse element working in real life---you've been working with inverse elements
 for longer than you've thought!
 
-Now that we have a group for our clock numbers (zero through twelve), we are but one step away from
-creating a group for our pitch classes. In fact, we pretty much already did so!
-We mapped every pitch class to a clock number, so wherever we see a clock
-number, we can replace it with the corresponding pitch class, and vice versa.
-This one-to-one mapping is called an [isomorphism](iso) in group theory. Look at
-you, learning all these fancy words for simple concepts!
+Now that we have a group for our clock numbers (zero through twelve), we are but
+one step away from creating a group for our pitch classes. In fact, we pretty
+much already did so!  We mapped every pitch class to a clock number, so wherever
+we see a clock number, we can replace it with the corresponding pitch class, and
+vice versa.  This one-to-one mapping is called an [isomorphism][iso] in group
+theory. Look at you, learning all these fancy words for simple concepts!
 
 And so, it is time to define our first proper operation on pitch classes. How
 exciting! Well, in reality, we'll just be using our old clock arithmetic with a
 fancy new name. In pitchclassland, clock arithmetic becomes the new and shiny
-"pitch shift" operator! We'll denote it as TODO. It is exactly our original
-definition of \\(a\\), but now with all the kinks worked out.
+"pitch shift" operator! It is exactly our original definition of \\(a\\), but
+now with all the kinks worked out. For example:
 
+- \\( a(A, 2) = B \\)
+- \\( a(G, 3) = A♯ \\)
 
+Although it seems like we haven't accomplished much, we actually have a lot of
+power in our hands now. We've rigorously created a mathematical formulation of
+music at the most basic level, the pitch class. The bulk of the work that we
+have done so far wasn't necessarily in creating \\ a \\), but rather the
+mathematical foundation of *any* operation that we could apply.
 
----
----
----
----
----
----
----
----
+What other operations can you define on the set of pitch classes? The sky is the
+limit!
 
-If you want to be truly mind blown, look at [this](mse) Math StackExchange
-post once you are comfortable with the notion of a group. My mind
-figuratively exploded when I read this for the first time.
+Next, we shall explore another mathematical structure that appears within music:
+the *monoid*.
 
----
-We will let \\(A = 0\\), \\(A♯ = 1\\),
-\\(B = 2\\), \\(C = 3\\), \\(...\\), \\(G = 10,\\) and \\(G♯ = 11\\).
+## Monoids
 
-It appears as if we have found another general property of our function, \\( a
-\\)! \\( a(x, y) = a(x, y) \\)
+Monoids are actually really simple, especially compared to groups. Monoids are
+simply groups without inverse elements; that is, there doesn't need to be an
+undo operation. So, every group is also a monoid, but not every monoid is a
+group. You can think of monoids as things that can "add," but not "subtract."
 
-Hmm... there seems to be a pattern here. Our two functions, \\(d\\) and \\(a\\)
-seem to be very closely related. But let's continue on.
+The canonical example of a monoid is string concatenation (addition): \\( "abc" +
+"def" = "abcdef"\\). We can't really "subtract" a string from this, so string
+concatenation forms a monoid, rather than a fully-fledged group.
+
+That's all! A monoid is a group without inverse elements; a group is a monoid
+with inverse elements.
+
+Let us now explore what we can apply monoids to within music. Now that we know
+the theory behind some basic abstract algebra, we don't have to go through the
+back-breaking effort of trying to understand the abstract concepts! We can just
+apply what we already know.
+
+## The Chord Monoid
+
+## Parallel Composition Monoid (Chords)
+
+We can define another operator, \\( p \\), that takes in two notes and returns
+the chord created when stacking them (for now, we will ignore note duration, but
+this approach will work with different durations too). I call this operator \\(
+p \\) because I like to think of it as a **p**arallel composition operator (as
+opposed to sequential, which we will see later). We shall see that \\( p \\)
+forms a monoid over the set of all chords.
+
+As an example usage of \\(p\\), if we wanted to play the notes C4 and E4 at the
+same time, we could construct this as \\( p(C4, E4) \\). This will return a
+chord. Note that \\( p \\) is *not* an operator over the set of all pitch
+classes (as \\(a\\) was), but rather an operator over the set of all *musical
+objects* (all notes, all chords, and as we will see later, all sequential
+compositions). Now, \\(p\\) will take in two musical objects and return a new
+musical object This allows us to construct chords with many more notes by
+repeatedly applying \\(p\\); for example, if we wanted a C major chord, we could
+write \\( p(p(C4, E4), G4)\\).
+
+Let us quickly verify that \\(p\\) forms a monoid over the set of all chords:
+
+- **Associatve Property**: \\(p(p(x, y), z) = p(x, p(y, z)) \\). \\(x\\) and
+    \\(y\\) stacked with \\(z\\) is the same as \\(x\\) stacked with \\(y\\) and
+    \\(z\\).
+- **Identity Element**: The identity element is the chord with zero notes (the
+    "empty chord").
+- **Closure Property**: Any chord composed with any other chord is a chord.
+
+Let's see one more monoid.
+
+## Sequential Composition Monoid
+
+We will define another operation, \\(s\\) to be the operation that composes two
+musical objects *sequentially*, one after another. You can verify the three
+monoid laws for yourself, if you'd like. What do you think the identity element
+would be?  Hint: <span>don't forget that notes have a duration, too</span>{:
+.spoiler}.
+
+## Algebraic Operations on Melodies
+
+And now, we can apply all of what we have learned to actual music. We have
+already defined two very important operators, parallel and sequential
+composition, that operate on sets of notes and chords (musical objects).
+Parallel composition will take two musical objects and layer them; sequential
+composition will take two musical objects and concatenate them. We can define
+many more such operators, like the reverse operator, \\(r\\). It takes in a
+single musical object and reverses it; a note reversed is just the note itself,
+a parallel composition reversed is all its components reversed, and a sequential
+composition reversed is the composition backward.
+
+We can also generalize \\(a\\) to work on any musical object; chords can be
+shifted up and down, and so can melodies.[^tonality] You can think of many
+different algebraic operations on melodies, like changing note durations,
+inverting notes, repeating sequences, etc., but I will leave that up to you!
+
+[^tonality]:
+    In my project specifically, I allow for shifting up and down by either major
+    intervals, minor intervals, or any (atonal) interval---this adjusts the
+    "flavor" (tonality) of the randomly generated songs.
+
+The key application of this theory in my project is that I define a set of a few
+of these operations, and randomly (and recursively) apply them to some starter
+melodies. This is a very flexible approach, as incredibly complex songs can be
+generated from simple melodies and operations.
+
+In other words, the notes themselves of the song are not randomly generated;
+instead, the operations *applied* to these notes are randomly selected.
+
+And that's it! I believe that this approach provides an elegant and simple
+framework for manipulating melodies and musical objects that is easily
+extensible in many different ways. I encourage you to think about how you would
+do things differently, or how you could extend what I have done. Most
+importantly, have fun with it! It is music, after all: the mathematics of sense.
 
 [msc]: https://education.wolfram.com/summer/camp/programs/mathematica/
 [aoon]: http://demonstrations.wolfram.com/AlgebraicOperationsOnMelodies/
