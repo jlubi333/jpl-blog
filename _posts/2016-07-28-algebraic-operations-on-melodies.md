@@ -413,8 +413,8 @@ simply groups without inverse elements; that is, there doesn't need to be an
 undo operation. So, every group is also a monoid, but not every monoid is a
 group. You can think of monoids as things that can "add," but not "subtract."
 
-The canonical example of a monoid is string concatenation (addition): \\( "abc" +
-"def" = "abcdef"\\). We can't really "subtract" a string from this, so string
+The canonical example of a monoid is string concatenation (addition): "abc" +
+"def" = "abcdef". We can't really "subtract" a string from this, so string
 concatenation forms a monoid, rather than a fully-fledged group.
 
 That's all! A monoid is a group without inverse elements; a group is a monoid
