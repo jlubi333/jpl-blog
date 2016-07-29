@@ -8,7 +8,8 @@ url: "http://blog.jlub.in"
 permalink: "pretty"
 
 base_url: "/"
-about_url: "/about/"
+about_url: "/about"
+contact_url: "/contact"
 portfolio_url: "http://jlub.in"
 
 markdown: "kramdown"

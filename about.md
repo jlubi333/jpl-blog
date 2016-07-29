@@ -1,9 +1,8 @@
 ---
 id: about
 layout: post
+title: "Hi there, I'm Justin Philip Lubin."
 ---
-
-# Hi there, I'm Justin Philip Lubin.
 
 I love computer science, math, playing the piano, fencing, and crochet. Most of
 all though, I am passionate about education: not just learning great things for
