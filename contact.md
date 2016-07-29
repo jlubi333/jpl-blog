@@ -1,6 +1,6 @@
 ---
 id: contact
-layout: post
+layout: page
 title: "Contact Me"
 ---
 

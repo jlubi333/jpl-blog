@@ -1,6 +1,6 @@
 ---
 id: about
-layout: post
+layout: page
 title: "Hi there, I'm Justin Philip Lubin."
 ---
 
