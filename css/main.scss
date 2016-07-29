@@ -143,6 +143,32 @@ sub {
         padding: 5px 20px;
     }
 
+@media(max-width: $transition-width) {
+    .site-nav ul {
+        display: block;
+    }
+
+    .site-nav li {
+        display: block;
+        border-right: none;
+        border-top: 1px dotted #000000;
+        float: none;
+        background-color: #E2E2E2;
+    }
+
+        .site-nav li:nth-child(even) {
+            background-color: #EEEEEE;
+        }
+
+        .site-nav li:last-child {
+            border-bottom: 1px dotted #000000;
+        }
+
+        .site-nav li a {
+            padding: 20px;
+        }
+}
+
 /* --- Post List --- */
 
 .post-list h2 {
