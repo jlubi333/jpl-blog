@@ -2,6 +2,7 @@
 id: about
 layout: page
 title: "Hi there, I'm Justin Philip Lubin."
+permalink: "/about"
 ---
 
 I love computer science, math, playing the piano, fencing, and crochet. Most of

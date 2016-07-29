@@ -5,7 +5,7 @@ email: "jlubi333@gmail.com"
 
 url: "http://blog.jlub.in"
 
-permalink: "pretty"
+permalink: ":year/:month/:day/:title"
 
 base_url: "/"
 about_url: "/about"
@@ -14,7 +14,6 @@ portfolio_url: "http://jlub.in"
 
 markdown: "kramdown"
 highlighter: "rouge"
-
 
 kramdown:
   input: "GFM"

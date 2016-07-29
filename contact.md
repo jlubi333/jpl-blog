@@ -2,6 +2,7 @@
 id: contact
 layout: page
 title: "Contact Me"
+permalink: "/contact"
 ---
 
 - Email: [jlubi333@gmail.com][email]
