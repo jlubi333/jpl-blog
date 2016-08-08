@@ -23,7 +23,8 @@ Rewriting:
 2n^2 = m^2 + m
 \\]
 
-Now we will make the right-hand side a perfect square (by completing the square):
+Now we will make the right-hand side a perfect square (by completing the
+square):
 
 \\[
 \begin{align}
@@ -33,7 +34,8 @@ Now we will make the right-hand side a perfect square (by completing the square)
 \end{align}
 \\]
 
-However, the \\(+1/2\\) does not lend itself very well to finding integer solutions. As such, we will let:
+However, the \\(+1/2\\) does not lend itself very well to finding integer
+solutions. As such, we will let:
 
 \\[
 \begin{align}
@@ -68,11 +70,15 @@ y^2 - 8x^2 &= 1
 \end{align}
 \\]
 
-By inspection, we see that the smallest such solution to this is \\(y = 3, x = 1\\) (other than the trivial solution \\(y = 1, x = 0\\)). Keep this in mind.
+By inspection, we see that the smallest such solution to this is \\(y = 3, x =
+1\\) (other than the trivial solution \\(y = 1, x = 0\\)). Keep this in mind.
 
-<span>(\\(y^2 - 8x^2 = 1\\) is called a [Pell equation][pell], by the way, because it is of the form \\(a^2 - Db^2 = 1\\).)</span>{: .mutter}
+<span>(\\(y^2 - 8x^2 = 1\\) is called a [Pell equation][pell], by the way,
+because it is of the form \\(a^2 - Db^2 = 1\\).)</span>{: .mutter}
 
-Note that this equation is a difference of squares. Recall that \\(a^2 - b^2 = (a + b)(a - b)\\). In this case, \\(a^2 = y^2\\) and \\(b^2 = 8x^2\\). So, we have:
+Note that this equation is a difference of squares. Recall that \\(a^2 - b^2 =
+(a + b)(a - b)\\). In this case, \\(a^2 = y^2\\) and \\(b^2 = 8x^2\\). So, we
+have:
 
 \\[
 y^2 - 8x^2 = \left(y + x\sqrt{8}\right)\left(y - x\sqrt{8}\right)
@@ -81,19 +87,30 @@ y^2 - 8x^2 = \left(y + x\sqrt{8}\right)\left(y - x\sqrt{8}\right)
 We know that our solution (y = 3, x = 1) works, so let us now plug it in:
 
 \\[
-\left(y + x\sqrt{8}\right)\left(y - x\sqrt{8}\right) = \left(3 + 1\sqrt{8}\right)\left(3 - 1\sqrt{8}\right) = 1
+\left(y + x\sqrt{8}\right)\left(y - x\sqrt{8}\right) = \left(3 +
+1\sqrt{8}\right)\left(3 - 1\sqrt{8}\right) = 1
 \\]
 
-Fortunately for us, all of this is just equal to \\(1\\). For all integers \\(k\\), \\(1^k\\) is equal to \\(1\\), so we can raise \\(\left(3 + 1\sqrt{8}\right)\left(3 - 1\sqrt{8}\right)\\) to the power of any non-negative integer \\(k\\) and our equation will still hold. This allows us to find all values (not just one) for \\(y\\) and \\(x\\) such that our equation holds.
+Fortunately for us, all of this is just equal to \\(1\\). For all integers
+\\(k\\), \\(1^k\\) is equal to \\(1\\), so we can raise \\(\left(3 +
+1\sqrt{8}\right)\left(3 - 1\sqrt{8}\right)\\) to the power of any non-negative
+integer \\(k\\) and our equation will still hold. This allows us to find all
+values (not just one) for \\(y\\) and \\(x\\) such that our equation holds.
 
 \\[
 \begin{align}
-\left(y + x\sqrt{8}\right)\left(y - x\sqrt{8}\right) &= \left[\left(3 + \sqrt{8}\right)\left(3 - \sqrt{8}\right)\right]^k = 1^k = 1 \\\
-\left(y + x\sqrt{8}\right)\left(y - x\sqrt{8}\right) &= \left(3 + \sqrt{8}\right)^k \left(3 - \sqrt{8}\right)^k
+\left(y + x\sqrt{8}\right)\left(y - x\sqrt{8}\right)
+    &= \left[\left(3 + \sqrt{8}\right)\left(3 - \sqrt{8}\right)\right]^k
+    = 1^k = 1 \\\
+\left(y + x\sqrt{8}\right)\left(y - x\sqrt{8}\right)
+    &= \left(3 + \sqrt{8}\right)^k \left(3 - \sqrt{8}\right)^k
 \end{align}
 \\]
 
-Because \\(y\\) and \\(x\\) are integers, we see that the first term of the left side must be equal to the first term of the right side, and the second term of the left side must be equal to the second term of the right side. This leaves us with a system of two equations:
+Because \\(y\\) and \\(x\\) are integers, we see that the first term of the left
+side must be equal to the first term of the right side, and the second term of
+the left side must be equal to the second term of the right side. This leaves us
+with a system of two equations:
 
 \\[
 \\begin{align}
@@ -120,7 +137,8 @@ y = \frac{\left(3 + \sqrt{8}\right)^k + \left(3 - \sqrt{8}\right)^k}{2}
 \end{align}
 \\]
 
-Now we will substitute \\(x\\) and \\(\\)y into our equations that relate to \\(n\\) and \\(m\\).
+Now we will substitute \\(x\\) and \\(y\\) into our equations that relate to
+\\(n\\) and \\(m\\).
 
 \\[
 \begin{align}
@@ -145,7 +163,9 @@ for any non-negative integer \\(k\\). {% include smiley %}
 
 ## Interactive Formula
 
-[Here][interactive] is an interactive version of the formula above using the wondrous [Desmos graphing calculator][desmos]. Slide \\(k\\) around to see the different values of \\(n\\) and \\(m\\)!
+[Here][interactive] is an interactive version of the formula above using the
+wondrous [Desmos graphing calculator][desmos]. Slide \\(k\\) around to see the
+different values of \\(n\\) and \\(m\\)!
 
 [matt-parker-video]: https://www.youtube.com/watch?v=Gh8h8MJFFdI
 [pell]: http://mathworld.wolfram.com/PellEquation.html
