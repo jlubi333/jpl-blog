@@ -14,7 +14,7 @@ for yourself (if you want), and come back here to see my solution (if you want)!
 We start with the equation:
 
 \\[
-n^2 = \frac{m * (m + 1)}{2}
+n^2 = \frac{m (m + 1)}{2}
 \\]
 
 Rewriting:
