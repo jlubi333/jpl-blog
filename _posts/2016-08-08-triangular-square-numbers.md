@@ -120,7 +120,7 @@ y = \frac{\left(3 + \sqrt{8}\right)^k + \left(3 - \sqrt{8}\right)^k}{2}
 \end{align}
 \\]
 
-Now we will substitute x and y into our equations that relate to n and m.
+Now we will substitute \\(x\\) and \\(\\)y into our equations that relate to \\(n\\) and \\(m\\).
 
 \\[
 \begin{align}
