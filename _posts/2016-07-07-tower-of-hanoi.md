@@ -194,7 +194,7 @@ be interesting to pursue.
 - What happens if the rings are sized differently than in the original problem?
 
 I don't know the answers to these questions, but these are just a few extensions
-that immediately came to my mind when thinking about the problem. There many be
+that immediately came to my mind when thinking about the problem. There may be
 no solution to these problems, or infinitely many! Have fun toying around with
 them.
 
