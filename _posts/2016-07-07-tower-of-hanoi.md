@@ -178,7 +178,8 @@ base case. Without the base case, the hypothesis means nothing!
 For example, even if I somehow proved the statement "If my name is John, then my
 eyes are blue" to be true, it would be completely useless. My name is Justin, so
 even if this hypothesis were true, it would tell you nothing about the color of
-my eyes. In this statement, my name being John acts as the base case.
+my eyes. In this statement, my name being John acts in a very similar way to the
+base case of our inductive proof.
 
 ## Conclusion
 
